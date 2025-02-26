@@ -20,8 +20,19 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     @Transactional(readOnly = true)
-    public List<Board> list() {
-        return boardRepository.findAll();
+    public List<BoardDto.BoardListResq> list() {
+        List<Board> list = boardRepository.findAll();
+        List<BoardDto.BoardListResq> result = new ArrayList<>();
+        for (Board board : list) {
+            result.add(BoardDto.BoardListResq.builder()
+                    .title(board.getTitle())
+                    .writer(board.getWriter())
+                    .content(board.getContent())
+                    .commentCount(board.getCommentCount())
+                    .build());
+        }
+
+        return result;
     }
 
     @Transactional(readOnly = true)

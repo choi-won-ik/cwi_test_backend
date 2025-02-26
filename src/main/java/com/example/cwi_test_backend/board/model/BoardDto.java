@@ -26,6 +26,15 @@ public class BoardDto {
         private List<CommentDto.CommentResq> comments;
     }
 
+    @Getter
+    @Builder
+    public static class BoardListResq {
+        private String title;
+        private String content;
+        private String writer;
+        private Integer commentCount;
+    }
+
 
     public Board toString(BoardReq dto){
         return Board.builder()
