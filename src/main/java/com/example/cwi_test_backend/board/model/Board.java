@@ -33,7 +33,4 @@ public class Board {
         this.commentCount = this.commentCount + 1;
     }
 
-    public void subCommentCount() {
-        this.commentCount = this.commentCount - 1;
-    }
 }
