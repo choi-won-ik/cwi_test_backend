@@ -6,6 +6,7 @@ import lombok.Getter;
 public class CommentDto {
     @Getter
     public static class CommentRequest {
+        private Long boardIdx;
         private String content;
         private String writer;
     }
