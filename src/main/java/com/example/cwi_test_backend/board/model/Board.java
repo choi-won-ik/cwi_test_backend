@@ -24,4 +24,14 @@ public class Board {
 
     @OneToMany(mappedBy = "board")
     private List<Comment> comments=new ArrayList<>();
+
+    private int commentCount;
+
+    public void addCommentCount() {
+        this.commentCount = this.commentCount + 1;
+    }
+
+    public void subCommentCount() {
+        this.commentCount = this.commentCount - 1;
+    }
 }
