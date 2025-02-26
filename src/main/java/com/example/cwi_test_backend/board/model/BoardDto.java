@@ -30,7 +30,7 @@ public class BoardDto {
     @Builder
     public static class BoardListResq {
         private String title;
-        private String content;
+        private Long idx;
         private String writer;
         private Integer commentCount;
     }
