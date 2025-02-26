@@ -24,6 +24,7 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     public BoardDto.BoardDtailsResp details(Long idx) {
         Optional<Board> op = boardRepository.findById(idx);
         if (op.isPresent()) {
@@ -45,5 +46,15 @@ public class BoardService {
         }
 
         return null;
+    }
+
+    @Transactional
+    public Board regist(BoardDto.BoardReq dto) {
+        return Board.builder()
+                .title(dto.getTitle())
+                .writer(dto.getWriter())
+                .content(dto.getContent())
+                .commentCount(0)
+                .build();
     }
 }
