@@ -61,11 +61,11 @@ public class BoardService {
 
     @Transactional
     public Board regist(BoardDto.BoardReq dto) {
-        return Board.builder()
+        return boardRepository.save(Board.builder()
                 .title(dto.getTitle())
                 .writer(dto.getWriter())
                 .content(dto.getContent())
                 .commentCount(0)
-                .build();
+                .build());
     }
 }
