@@ -14,7 +14,7 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping("/list")
-    public List<Board> list() {
+    public List<BoardDto.BoardListResq> list() {
         return boardService.list();
     }
 
