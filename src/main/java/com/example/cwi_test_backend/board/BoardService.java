@@ -27,7 +27,7 @@ public class BoardService {
             result.add(BoardDto.BoardListResq.builder()
                     .title(board.getTitle())
                     .writer(board.getWriter())
-                    .content(board.getContent())
+                    .idx(board.getIdx())
                     .commentCount(board.getCommentCount())
                     .build());
         }
